@@ -1,0 +1,75 @@
+version: '3'
+services:
+
+  # weather api built with nodejs
+  weather:
+    build:
+      context: ./weather-service
+      target: dev
+    image: dashboard/weather
+    container_name: "weather-service"
+    volumes:
+      - ./weather-service:/app
+
+  # spotify api built with nodejs
+  spotify:
+    build:
+      context: spotify-service
+      target: dev
+    image: dashboard/spotify
+    container_name: "spotify-service"
+    volumes:
+      - ./spotify-service:/app
+
+  # exchange api built with nodejs
+  exchange:
+    build:
+      context: ./exchange-service
+      target: dev
+    image: dashboard/exchange
+    container_name: "exchange-service"
+    volumes:
+      - ./exchange-service:/app
+
+  # cat api built with nodejs
+  cat:
+    build:
+      context: cat-service
+      target: dev
+    image: dashboard/cat
+    container_name: "cat-service"
+    volumes:
+      - ./cat-service:/app
+
+  # front-end built with react
+  front-end:
+    build:
+      context: ./front-end
+      target: dev
+    image: dashboard/front-end
+    container_name: "front-end"
+    volumes:
+      - ./front-end:/app
+
+  # back-end api built with nodejs
+  server:
+    build:
+      context: ./server
+      target: dev
+    image: dashboard/server
+    container_name: "server"
+    volumes:
+      - ./server:/app
+
+  # nginx is used as reverse proxy
+  reverse-proxy:
+    build:
+      context: ./nginx
+      target: dev
+    image: dashboard/reverse-proxy
+    container_name: "reverse-proxy"
+    ports:
+      - "8080:80"
+    depends_on:
+      - front-end
+      - server

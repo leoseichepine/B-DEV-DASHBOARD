@@ -1,0 +1,11 @@
+.container-sunset-sunrise {
+    height: 80%;
+    width: 70%;
+    align-self: center;
+    margin: 0 auto;
+}
+
+text.clock {
+    font-weight: 50;
+    font-family: 'Open Sans', sans-serif;
+}

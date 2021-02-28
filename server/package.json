@@ -1,0 +1,51 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "The server",
+    "author": "Lucien Brun & Léo Seichepine",
+    "license": "ISC",
+    "main": "src/index.js",
+    "standard": {
+        "env": [
+            "mocha"
+        ],
+        "ignore": [
+            "mock"
+        ]
+    },
+    "type": "module",
+    "scripts": {
+        "test": "mocha -R spec src/**/*.test.js",
+        "start": "node src/index.js",
+        "lint": "standard --verbose | snazzy",
+        "node-debug": "DEBUG=express* node src/index.js"
+    },
+    "keywords": [
+        "express",
+        "docker",
+        "microservice"
+    ],
+    "devDependencies": {
+        "eslint": "^3.13.1",
+        "mocha": "^8.2.1",
+        "should": "^11.1.2",
+        "snazzy": "^6.0.0",
+        "standard": "^8.6.0",
+        "supertest": "^6.0.1"
+    },
+    "dependencies": {
+        "bcryptjs": "2.4.3",
+        "body-parser": "1.19.0",
+        "chai": "^4.2.0",
+        "cors": "2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.14.0",
+        "express-session": "1.17.1",
+        "helmet": "^3.4.0",
+        "http-status": "^0.2.5",
+        "jsonwebtoken": "8.5.1",
+        "mongoose": "5.10.15",
+        "morgan": "^1.7.0",
+        "request": "^2.88.2"
+    }
+}

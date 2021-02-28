@@ -1,0 +1,47 @@
+{
+  "name": "weather-service",
+  "version": "1.0.0",
+  "description": "Weather microservice",
+  "author": "Lucien Brun & Léo Seichepine",
+  "license": "ISC",
+  "main": "src/index.js",
+  "standard": {
+    "env": [
+      "mocha"
+    ],
+    "ignore": [
+      "mock"
+    ]
+  },
+  "type": "module",
+  "scripts": {
+    "test": "mocha -R spec src/**/*.test.js",
+    "start": "node src/index.js",
+    "lint": "standard --verbose | snazzy",
+    "node-debug": "DEBUG=express* node src/index.js",
+    "doc": "apidoc -i src/ -o doc/"
+  },
+  "keywords": [
+    "express",
+    "docker",
+    "microservice"
+  ],
+  "devDependencies": {
+    "eslint": "^3.13.1",
+    "mocha": "^8.2.1",
+    "should": "^11.1.2",
+    "snazzy": "^6.0.0",
+    "standard": "^8.6.0",
+    "supertest": "^6.0.1"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "cors": "2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.14.0",
+    "helmet": "^3.4.0",
+    "http-status": "^0.2.5",
+    "morgan": "^1.7.0",
+    "request": "^2.88.2"
+  }
+}

@@ -1,0 +1,50 @@
+.cat-card img {
+    width: 100%;
+    height: 100%;
+}
+
+.cat-card h3 {
+    text-align: center;
+}
+
+.bar-svg {
+    margin-top: -50px;
+    width: 500px;
+    height: 300px;
+}
+
+.bar-group .name-label {
+    text-anchor: end;
+    font-weight: 300;
+    font-size: 1em;
+    fill: #333;
+}
+
+.bar-group .value-label {
+    text-anchor: end;
+    fill: #fff;
+    font-weight: 900;
+    font-size: 0.7em;
+}
+
+.bar-container .bar-group {
+    transition: opacity 0.3s;
+}
+
+/* Fade bars when the chart is hovered */
+.bar-container:hover .bar-group {
+    opacity: 0.3;
+}
+
+/* But don't fade the hovered bar... */
+.bar-container .bar-group:hover {
+    opacity: 1;
+}
+
+.bar-container .bar-group:hover .name-label {
+    font-weight: 400;
+}
+
+.bar-container .bar-group:hover .value-label {
+    font-size: 0.8em;
+}

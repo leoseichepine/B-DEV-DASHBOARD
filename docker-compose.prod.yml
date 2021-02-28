@@ -1,0 +1,89 @@
+version: '3'
+services:
+
+  # weather api built with nodejs
+  weather-prod:
+    restart: always
+    build:
+      context: ./weather-service
+      target: prod
+    image: dashboard/weather-prod
+    container_name: "weather-service-prod"
+    volumes:
+      - ./weather-service:/app
+
+  # spotify api built with nodejs
+  spotify-prod:
+    restart: always
+    build:
+      context: spotify-service
+      target: prod
+    image: dashboard/spotify-prod
+    container_name: "spotify-service-prod"
+    volumes:
+      - ./spotify-service:/app
+
+  # exchange api built with nodejs
+  exchange-prod:
+    restart: always
+    build:
+      context: ./exchange-service
+      target: prod
+    image: dashboard/exchange-prod
+    container_name: "exchange-service-prod"
+    ports:
+      - "5003:5003"
+    volumes:
+      - ./exchange-service:/app
+
+  # cat api built with nodejs
+  cat-prod:
+    restart: always
+    build:
+      context: cat-service
+      target: prod
+    image: dashboard/cat-prod
+    container_name: "cat-service-prod"
+    volumes:
+      - ./cat-service:/app
+
+
+  # front-end built with react
+  front-end-prod:
+    restart: always
+    build:
+      context: ./front-end
+      target: prod
+    image: dashboard/front-end-prod
+    container_name: "front-end-prod"
+    volumes:
+      - ./front-end:/app
+
+  # back-end api built with nodejs
+  server-prod:
+    restart: always
+    build:
+      context: ./server
+      target: prod
+    image: dashboard/server-prod
+    container_name: "server-prod"
+    volumes:
+      - ./server:/app
+
+  # nginx is used as reverse proxy
+  reverse-proxy-prod:
+    restart: always
+    build:
+      context: ./nginx
+      target: prod
+    image: dashboard/reverse-proxy-prod
+    container_name: "reverse-proxy-prod"
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - front-end-prod
+      - server-prod
+    # volumes:
+    #  - ../certs-data:/data/letsencrypt
+    #  - /etc/letsencrypt/:/etc/letsencrypt/

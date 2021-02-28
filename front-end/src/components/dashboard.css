@@ -1,0 +1,208 @@
+.dashboard{
+	padding: 1em;
+	background-color: #F9F9F9;
+	border-top: 3em;
+	border-left: 5em;
+	border-right: 5em;
+	border-bottom: 5em;
+	border-style: solid;
+	border-color: #F9F9F9;
+	box-shadow: 1px 1px 0.2em #999;
+}
+.fill{
+	min-height: 100%;
+	height: 100%;
+}
+.dashboard .title h3{
+	color: #344862;
+	font-weight: bold;
+}
+
+.dashboard .title>.control-buttons{
+	top:1em;
+}
+
+div.content>.row>div{
+   padding: 1em;
+}
+
+.widget-base>.filled-widget,
+.widget-base>.empty-widget
+{
+	min-height: 400px;
+	max-height: 400px;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	border-radius: 0.5em;
+	
+}
+.widget-base>.filled-widget{
+	background-color: #fff;
+}
+.widget-base .body{
+	max-height: 400px;
+	overflow-y: auto;
+}
+
+.widget-base .dragging-cover,
+.widget-base>.empty-widget>span{
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 15px;
+    padding-top: 30%;
+    text-align: center;
+    color: #5A68c6;
+    font-weight: bold;
+}
+
+.btn .caret{
+	visibility: hidden;
+}
+
+.btn.dropdown-toggle:after{
+	content: url('/images/Arrowdown - icon - default.svg');
+	display: inline-block;
+    vertical-align: middle;
+    margin-left: -1.3em;
+    margin-right: -1.3em;
+    margin-top: 0.5em;
+}
+.widget-base .title  .btn.btn.dropdown-toggle:hover:after{
+	content: url('/images/Arrowdown - icon - selected.svg');
+}
+.widget-base .title  .btn.btn.dropdown-toggle{
+	padding-right: 0.7em;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+div.widget-base>div.empty-widget
+{
+	 border: 2px dashed #ddd;
+}
+div.widget-base>div.filled-widget
+{
+	 box-shadow: 1px 1px 0.2em #999;
+	 cursor:move;
+}
+
+div.widget-base.dragging>div.filled-widget{
+	opacity: 0.4;
+}
+
+.control-buttons>.btn{
+	margin: 0px 10px 0px 10px;
+}
+
+.control-buttons>.add-widget>img{
+   margin: -7px 0px -7px -10px;
+}
+
+.widget-base .row{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+
+.widget-base .title{
+	color: #344862;
+	height: 13%;
+	border-bottom: 1px solid #ddd;
+	position: relative;
+}
+
+.widget-base .body{
+	font-size: 13px;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.widget-base .title>span{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left:1em;
+	height: 50%;
+	margin: auto;
+	font-weight: bold;
+}
+.widget-base .title .btn{
+	padding: 0.2em;
+	border: 0px;
+	text-transform: capitalize;
+}
+
+.widget-base .title .three-dots{
+	display: inline;
+	padding: 0em;
+	margin-bottom: 0px;
+}
+
+.filled-widget .views .dropdown-menu{
+	text-transform: capitalize;	
+}
+
+.three-dots:before{
+  content: url('/images/Settings - icon - default.svg');
+}
+
+.three-dots:hover:before{
+content: url('/images/Settings - icon - selected.svg');	
+}
+
+.modal-dialog {
+	margin-top: 16em;
+}
+
+.widget-base .modal-dialog{
+	width: 30%;
+	min-width: 400px;
+}
+
+.widget-base .modal-title{
+	color: #223754;
+}
+
+/* SVG OVERRIDE */
+.svg-button{
+	display: inline-block;
+	margin: 0.2em;
+	cursor: pointer;
+}
+.svg-button.cancel:before{
+	content: url('/images/cancelbutton - web - default.svg');
+	display: block;
+}
+.svg-button.cancel:hover:before{
+	content: url('/images/cancelbutton - web - hover.svg');
+	display: block;
+}
+
+.svg-button.save:before{
+	content: url('/images/savebutton - web - default.svg');
+	display: block;
+}
+.svg-button.save:hover:before{
+	content: url('/images/savebutton - web - selected.svg');
+	display: block;
+}
+/*
+
+
+.content .content-widget>div>div{
+	position: absolute;
+	padding: 0px 30px 30px 0px;
+	height: 100%;
+}
+
+.content .content-widget .body{
+	height: 76%;
+}
+
+
+
+*/
